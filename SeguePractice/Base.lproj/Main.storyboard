@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,86 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SeguePractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNp-aO-59p">
+                                <rect key="frame" x="149" y="84" width="77" height="30"/>
+                                <state key="normal" title="合計を表示"/>
+                                <connections>
+                                    <segue destination="g4R-pE-r3y" kind="show" id="QYc-oz-Qu3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 + 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajh-xd-sZX">
+                                <rect key="frame" x="170" y="55" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ajh-xd-sZX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="84X-ud-wpo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZNp-aO-59p" secondAttribute="trailing" constant="149" id="9eR-EI-b9L"/>
+                            <constraint firstItem="ZNp-aO-59p" firstAttribute="top" secondItem="ajh-xd-sZX" secondAttribute="bottom" constant="8" id="GmR-CQ-rl3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZNp-aO-59p" secondAttribute="bottom" constant="553" id="IAO-rx-Yjg"/>
+                            <constraint firstItem="ZNp-aO-59p" firstAttribute="top" secondItem="ajh-xd-sZX" secondAttribute="bottom" constant="8" id="NcT-ms-aSS"/>
+                            <constraint firstItem="ZNp-aO-59p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="149" id="UoI-aC-CbT"/>
+                            <constraint firstItem="ajh-xd-sZX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="170" id="uHu-JA-4sD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ajh-xd-sZX" secondAttribute="trailing" constant="170" id="w81-TP-hmd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138" y="127"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="3nh-Lk-Qyk">
+            <objects>
+                <viewController id="g4R-pE-r3y" customClass="ResultViewController" customModule="SeguePractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NBw-3M-e8A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOc-ge-MTN">
+                                <rect key="frame" x="172" y="87" width="31" height="30"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <segue destination="Tdd-Fu-HEH" kind="unwind" unwindAction="unwind:" id="Mgs-pV-ZcX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsB-1q-Sam">
+                                <rect key="frame" x="102" y="58" width="170" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fsB-1q-Sam" firstAttribute="leading" secondItem="v0J-k5-KHc" secondAttribute="leading" constant="102" id="7hY-Tb-J6m"/>
+                            <constraint firstItem="fsB-1q-Sam" firstAttribute="top" secondItem="v0J-k5-KHc" secondAttribute="top" constant="38" id="SXo-ee-aph"/>
+                            <constraint firstItem="v0J-k5-KHc" firstAttribute="trailing" secondItem="mOc-ge-MTN" secondAttribute="trailing" constant="172" id="hdL-Ul-x8i"/>
+                            <constraint firstItem="mOc-ge-MTN" firstAttribute="leading" secondItem="v0J-k5-KHc" secondAttribute="leading" constant="172" id="ksz-Mh-cvz"/>
+                            <constraint firstItem="mOc-ge-MTN" firstAttribute="top" secondItem="fsB-1q-Sam" secondAttribute="bottom" constant="8" id="nAq-0a-I4n"/>
+                            <constraint firstItem="v0J-k5-KHc" firstAttribute="trailing" secondItem="fsB-1q-Sam" secondAttribute="trailing" constant="103" id="qfU-OD-KgG"/>
+                            <constraint firstItem="mOc-ge-MTN" firstAttribute="top" secondItem="fsB-1q-Sam" secondAttribute="bottom" constant="8" id="ust-2t-3ED"/>
+                            <constraint firstItem="v0J-k5-KHc" firstAttribute="bottom" secondItem="mOc-ge-MTN" secondAttribute="bottom" constant="550" id="wxI-pg-Emg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v0J-k5-KHc"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="fsB-1q-Sam" id="vc7-2B-VKm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFe-nX-agh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Tdd-Fu-HEH" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="880.79999999999995" y="127.28635682158921"/>
         </scene>
     </scenes>
 </document>
